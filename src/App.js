@@ -1,13 +1,22 @@
 import React from 'react';
+import './App.css';
 import Quiz from './components/Quiz';
+import LandingPage from './LandingPage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-const App = () => {
+
+function App() {
   return (
-    <div>
-      <h1>Pharmacy Technician Quiz</h1>
-      <Quiz />
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/quiz" element={<Quiz />} />
+        </Routes>
+      </Router>
     </div>
   );
-};
+}
 
 export default App;
+

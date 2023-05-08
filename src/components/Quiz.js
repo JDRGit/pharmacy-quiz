@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Question from './Question';
 import PharmacyTechMathQuestions from './PharmacyTechMathQuestions';
+import { Link } from 'react-router-dom';
 
 const quizData = [
   ...PharmacyTechMathQuestions,
@@ -49,6 +50,9 @@ const Quiz = () => {
 
   return (
     <div>
+      <Link to="/">
+        <button>Back to Home</button>
+      </Link>
       <CategorySelector setSelectedCategory={setSelectedCategory} />
       {selectedCategory ? (
         currentQuestion < filteredQuizData.length ? (
